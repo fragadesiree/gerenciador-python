@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+{% load meus_filtros %}
+    <form method="post" class="form-signin centraliza-login">
+        <img class="mb-4" src="http://www.salesforcebrasil.com.br/wp-content/uploads/2014/06/Cloud-Plain-Blue.png" alt="" width="85" height="85">
+        <hr>
+        {% csrf_token %}
+        {% for message in messages%}
+            <div class="alert alert-danger">
+                {{ message }}
+        {% endfor %}
+            </div>
+        <div class="form-group ajuste-login">
+            {{ form_login.username.errors}}
+            <label>Login: </label>
+            {{ form_login.username|addclass:'form-control' }}
+        </div>
+        <br/>
+        <div class="form-group ajuste-login">
+            {{ form_login.password.errors}}
+            <label>Senha: </label>
+            {{ form_login.password|addclass:'form-control' }}
+        </div>
+        <br/>
+        <div class="form-group ajuste-login">
+            <input type="submit" value="Entrar" class="btn btn-info">
+        </div>
+        <br/>
+        <a href="{% url 'cadastrar_usuarios' %}">Ainda não possui cadastro? - Clique aqui</a>
+    </form>
+
+{% endblock conteudo %}

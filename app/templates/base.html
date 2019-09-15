@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% load static from staticfiles %}
+<html lang="en">
+<link>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="icon" type="imagem/ico" href="{% static 'app/img/favicon.ico' %}" />
+    <link rel="stylesheet" href="{% static 'app/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'app/css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+     <title>UTask - Gerenciador de Tarefas</title>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#"><i class="fa fa-tasks" aria-hidden="true" style="color: #4682b4"></i> UTask</a>
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'logar_usuarios' %}"> Logar </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'deslogar_usuarios' %}"> Logoff </a>
+        </li>
+    </ul>
+  </div>
+</nav>
+<main class="container">
+   {% block conteudo %}
+
+    {% endblock conteudo %}
+</main>
+
+<footer class="footer mt-auto py-3 text-center">
+    <div class="container">
+        <span class="text-muted">Desiree Fraga - 2019 &copy | fragadeh.a@gmail.com</span>
+    </div>
+</footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="{% static 'app/js/bootstrap.min.js' %}"></script>
+</body>
+</html>

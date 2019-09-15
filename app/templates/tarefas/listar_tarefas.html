@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+<a href="{% url 'cadastrar_tarefas' %}"><input type="button" class="btn btn-info nb-3 botao" value="Cadastrar nova tarefa"></a>
+{% for tarefa in tarefas %}
+<div>
+    <div class="card nb-3 ajuste">
+        <div class="card-header">
+            <span class="decoracao-cartao">Prioridade:</span> {{tarefa.get_prioridade_display}}
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">{{tarefa.titulo}}</h5>
+            <p class="card-text">{{tarefa.descricao}}</p>
+        </div>
+        <div class="card-footer">
+            <span class="decoracao-cartao">Expira em:</span> {{tarefa.data_expiracao}}
+        <hr>
+            <a href="{% url 'editar_tarefas' tarefa.id %}">Alterar tarefa</a> |  <a href="{% url 'remover_tarefas' tarefa.id %}">Excluir tarefa</a>
+        </div>
+</div>
+</div>
+{% endfor %}
+
+{% endblock conteudo %}

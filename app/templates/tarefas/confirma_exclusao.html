@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+<br/>
+<div class="alert alert-danger ajuste">
+        <p class="alerta">Tem certeza que deseja excluir a tarefa abaixo?</p>
+</div>
+<div>
+    <div class="card nb-3 ajuste">
+        <div class="card-header">
+            <h5 class="card-ti  tle">{{tarefa.titulo}}</h5>
+        </div>
+        <div class="card-body">
+            <p>{{tarefa.descricao}}</p>
+        </div>
+            <div class="card-footer">Expira em: {{tarefa.data_expiracao}}</div>
+        <hr>
+         <form method="post" class="centraliza">
+                {% csrf_token %}
+                <button class="btn btn-danger btn-sm" type="submit">Excluir</button> | <a href="{% url 'listar_tarefas' %}"><input type="button" class="btn btn-info btn-sm nb-3" value="Voltar"></a>
+         </form>
+    </div>
+</div>
+{% endblock conteudo %}

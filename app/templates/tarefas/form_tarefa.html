@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load meus_filtros %}
+{% block conteudo %}
+<br/>
+<div class="centraliza">
+<form method="post" class="ajuste">
+    {% csrf_token %}
+    <div class="form-group">
+        {{ form_tarefa.titulo.errors }}
+        <label>Titulo: </label>
+        {{ form_tarefa.titulo|addclass:'form-control'}}
+    </div>
+
+     <div class="form-group">
+        {{ form_tarefa.descricao.errors }}
+        <label>Descrição: </label>
+        {{ form_tarefa.descricao|addclass:'form-control' }}
+    </div>
+
+     <div class="form-group">
+        {{ form_tarefa.data_expiracao.errors }}
+        <label>Data de Expiração: </label>
+        {{ form_tarefa.data_expiracao|addclass:'form-control' }}
+    </div>
+
+     <div class="form-group">
+        {{ form_tarefa.prioridade.errors }}
+        <label>Prioridade: </label>
+        {{ form_tarefa.prioridade|addclass:'form-control' }}
+    </div>
+
+    <div class="form-group">
+        <input type="submit" class="btn btn-block btn-info" value="Salvar">
+    </div>
+</form>
+</div>
+    <div class="form-group">
+        <a href="{% url 'listar_tarefas' %}"><input type="button" class="btn btn-default  " value="<"></a>
+    </div>
+{% endblock conteudo %}

@@ -1,0 +1,58 @@
+/* Plano de fundo em vermelho e opacidade de 50% */
+body {
+    background: url('/static/app/img/background.png') no-repeat center center fixed ;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+     }
+
+button {
+    margin: 5px;
+    padding: 5px;
+    }
+
+footer {
+    position: fixed;
+    bottom: 0;
+}
+
+label {
+    color: #191070;
+    font-weight: 400;
+}
+
+.botao {
+    margin: 5px;
+    padding: 5px;
+    }
+
+.centraliza {
+    text-align: center;
+     }
+
+.ajuste {
+    display: inline-block;
+    position: relative;
+    }
+
+.centraliza-login {
+    text-align: center;
+    margin-top: 50px;
+     }
+
+.ajuste-login {
+    display: inline-block;
+    position: relative;
+    }
+
+.alerta {
+    color: #FF0000;
+    font-weight: bold;
+    }
+
+.decoracao-cartao {
+    color: #3B5998;
+    font-weight: bold;
+    text-decoration: underline;
+    }
